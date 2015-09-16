@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Project template</title>
+    <title>Aws dynamo</title>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,8 +25,17 @@
 
 <body data-ng-app="app">
 
-<div data-ng-controller="testController as testCtrl">
-    {{testCtrl.speak}}
+<div data-ng-controller="testController as vm">
+    <p>
+        <input type="text" data-ng-model="vm.googleToken" />
+        <button data-ng-click="vm.linkGoogleTokenWithAws(vm.googleToken)">Link Google token to AWS</button>
+    </p>
+    <p>
+        <button data-ng-click="vm.addTestData()">Add test data</button>
+    </p>
+    <p>
+        {{vm.result}}
+    </p>
 </div>
 
     <!-- inject:js -->
